@@ -1,0 +1,16 @@
+# 统一用 LF: 避免 Windows 上 checkout 出 CRLF 导致
+#   - sparse_test.sh 出现 "/bin/sh^M: bad interpreter"
+#   - Makefile 出现 "missing separator"
+* text=auto eol=lf
+
+# 显式声明(双保险)
+*.c        text eol=lf
+*.h        text eol=lf
+*.sh       text eol=lf
+Makefile   text eol=lf
+*.md       text eol=lf
+.gitignore text eol=lf
+
+# 二进制类不参与行尾转换
+*.bin      binary
+*.o        binary
